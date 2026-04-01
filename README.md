@@ -1,4 +1,4 @@
-# RCS
+# RCS automated 
 Restricted Cubic Spline (RCS) in Stata
 
 **RCS Linear Regression_single**	-	
