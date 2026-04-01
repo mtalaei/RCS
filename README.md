@@ -10,10 +10,10 @@ After defining the adjustment model, the following items need to be defined: Exp
 Notes: 
 1. If there is no indicator to be used as an if clause, it should be !missing(`oo')
 2. The number of Knots and positions should be consistent; if 4 knots are defined, there should be four positions defined in the line below.
-   standard knot positions:
-     (3): 10 50 90
-     (4): 5 35 65 95
-     (5): 5 27.5 50 72.5 95
+   standard knot positions:<br>
+     (3): 10 50 90<br>
+     (4): 5 35 65 95<br>
+     (5): 5 27.5 50 72.5 95<br>
 
 
 **RCS Linear Regression_multiple** - 
@@ -28,7 +28,7 @@ To compare model fit with different numbers of knots (3, 4, and 5 knots). The mo
 3)	P for a non-linear association 
 It is the ultimate product of these codes, in which the evidence of a non-linear association is explored. 
 The output Excel file is organised with exposure variables in columns and outcome variables in rows, in three blocks (column sets) corresponding to the three items explained above, all in a single sheet. For example, it currently has three hypothetical exposure variables (E1-E3) and 5 hypothetical outcome variables (O1-O5); therefore, the three blocks explained above will each have three columns, separated by an empty column. 
-The section above titled “*==Run” needs to be adjusted to your needs. These changes should be identical across the three blocks of code, except for the column letters for exposures. It means that the ‘if clauses’, exposure and outcome variable lists, etc., must be the same, but columns corresponding to exposures need to move forward (B C D, H I J, and N O P for three exposure variables).
+The section above titled “*==Run” needs to be adjusted to your needs. These changes should be identical across the three code blocks, except for the column letters for exposures. It means that the ‘if clauses’, exposure and outcome variable lists, etc., must be the same, but columns corresponding to exposures need to move forward (B C D, H I J, and N O P for three exposure variables).
 The ‘if clause’ must be defined even if none is necessary. In that case, you can use a covariate without missing as an indicator [e.g. !missing(age)]. 
 If you aim to use standard knot positions (3, 4, and 5 default knots), you don’t need to change anything. If you want to explore alternative knots (modified), they should be produced in a separate sheet (by adding _m to the sheet name). If all results are needed in a single sheet (e.g., to compare AICs), you can merge the two sheets by manually adding the products of the alternative knots to the Excel sheet for default knots (in the S1 cell if there are three exposure variables).
 Finally, modify the last line before “*==Run” (putexcle command) by defining the Excel file name and sheet. Don’t forget that this must be identical in the three blocks. 
