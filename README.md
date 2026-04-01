@@ -4,7 +4,7 @@ Restricted Cubic Spline (RCS) in Stata
 **RCS Linear Regression_single**		
 Testing non-linearity in the association between a continuous exposure and a continuous outcome in a linear regression model 
 
-*Explanations*
+*Explanations*:
 It is totally flexible in the number of knots and their positions (in percentile terms). 
 After defining the adjustment model, the following items need to be defined: Exposure (EE), Outcome (OO), if clause, number of Knots, and Knot positions. 
 Notes: 
@@ -19,7 +19,7 @@ Notes:
 **RCS Linear Regression_multiple**		
 Testing non-linearity in associations between multiple continuous exposures and multiple continuous outcome variables in linear regression models 
 
-*Explanations*
+*Explanations*:
 These codes test non-linearity between multiple continuous exposure variables and multiple outcomes in multivariable models in Stata. For each exposure-outcome set, three blocks of codes should be run separately, which produce three items per association: 
 1)	P for any association
 Only suitable when there is no evidence of a non-linear association (item 3).
