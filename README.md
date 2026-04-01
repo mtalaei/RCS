@@ -1,7 +1,7 @@
 # RCS
 Restricted Cubic Spline (RCS) in Stata
 
-**RCS Linear Regression_single**		
+**RCS Linear Regression_single**	-	
 Testing non-linearity in the association between a continuous exposure and a continuous outcome in a linear regression model 
 
 *Explanations*:
@@ -16,7 +16,7 @@ Notes:
      (5): 5 27.5 50 72.5 95
 
 
-**RCS Linear Regression_multiple**		
+**RCS Linear Regression_multiple** - 
 Testing non-linearity in associations between multiple continuous exposures and multiple continuous outcome variables in linear regression models 
 
 *Explanations*:
