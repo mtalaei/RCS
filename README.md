@@ -32,8 +32,9 @@ The section above titled “==Run” needs to be adjusted to your needs. These c
 The ‘if clause’ must be defined even if none is necessary. In that case, you can use a covariate without missing as an indicator [e.g. !missing(age)].  
 If you aim to use standard knot positions (3, 4, and 5 default knots), you don’t need to change anything. If you want to explore alternative knots (modified), they should be produced in a separate sheet (by adding _m to the sheet name). If all results are needed in a single sheet (e.g., to compare AICs), you can merge the two sheets by manually adding the products of the alternative knots to the Excel sheet for default knots (in the S1 cell if there are three exposure variables).  
 Finally, modify the last line before “==Run” (putexcle command) by defining the Excel file name and sheet. Don’t forget that this must be identical in the three blocks.  
-The “==Run” line is a flag; you should run all the code from “----->Defining” to “/*END*/” for each block (it will not work correctly if you run the section after “==Run” separately).  
-*Errors*  
+The “==Run” line is a flag; you should run all the code from “----->Defining” to “/*END*/” for each block (it will not work correctly if you run the section after “==Run” separately).
+
+*Errors*
 1.	Can happen when saving outputs takes longer than the cycle time. You can save your output on a local drive (not synchronised by OneDrive, etc.), disconnect your computer from the internet, or increase the sleep command.  
 2.	Convergence issue: You need to explore the problem manually. Usually, you need to amend the multivariable model, such as using a simpler one. 
 
