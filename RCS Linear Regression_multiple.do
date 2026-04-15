@@ -1,5 +1,5 @@
 *===============================================================================
-*					RCS: linearity testing - linear regression - multiple
+**#					RCS: linearity testing - linear regression - multiple
 *===============================================================================
 *Notes:
 *	Linear regressions with a flexible number and positions of knots for multiple associations
