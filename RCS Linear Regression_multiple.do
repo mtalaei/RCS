@@ -26,7 +26,7 @@ local knots3="10 50 90"				//Positions of Knots: 3//
 local knots4="5 35 65 95"			//Positions of Knots: 4//
 local knots5="5 27.5 50 72.5 95"	//Positions of Knots: 5//
 putexcel set outputs\Tables_RCS.xlsx, sheet(RCS_XXX) modify		//Output file & sheet//
-*==Run
+*----->Run
 putexcel A1="RCS", bold fpattern(solid,gold)
 putexcel B1="P for association", bold fpattern(solid,lemonchiffon)
 putexcel C1:D1, bold fpattern(solid,lemonchiffon)
@@ -94,7 +94,7 @@ local knots3="10 50 90"				//Positions of Knots: 3//
 local knots4="5 35 65 95"			//Positions of Knots: 4//
 local knots5="5 27.5 50 72.5 95"	//Positions of Knots: 5//
 putexcel set outputs\Tables_RCS.xlsx, sheet(RCS_XXX) modify		//Output file & sheet//
-*==Run
+*----->Run
 putexcel G1="RCS", bold fpattern(solid,gold)
 putexcel H1="AIC", bold fpattern(solid,turquoise)
 putexcel I1:J1, bold fpattern(solid,turquoise)
@@ -164,7 +164,7 @@ local knots3="10 50 90"				//Positions of Knots: 3//
 local knots4="5 35 65 95"			//Positions of Knots: 4//
 local knots5="5 27.5 50 72.5 95"	//Positions of Knots: 5//
 putexcel set outputs\Tables_RCS.xlsx, sheet(RCS_XXX) modify		//Output file & sheet//
-*==Run
+*----->Run
 putexcel M1="RCS", bold fpattern(solid,gold)
 putexcel N1="P for non-linearity", bold fpattern(solid,thistle)
 putexcel O1:P1, bold fpattern(solid,thistle)
