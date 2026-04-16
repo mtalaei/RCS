@@ -18,7 +18,7 @@ After defining the adjustment model, the following items need to be defined: Exp
      (4): 5 35 65 95<br>
      (5): 5 27.5 50 72.5 95<br>
 6. The “----->Run” line is a flag indicating that there is usually no need to change code from that point onwards. <br>
-<br>
+<div>
 
 **RCS Graph Linear Regression** -
 To draw an RCS curve for an association between a continuous exposure and a continuous outcome in a linear regression model.
@@ -35,7 +35,7 @@ The number of knots and their positions (in percentiles) are flexibly defined at
 8.	The lines marked by ‘Y1 scale’ and ‘X scale’ are where you need to adjust the scales to fit the range of exposure and outcome variables for the RCS curve.
 9.	The lines marked by ‘Y2 scale’ and ‘X scale’ are where you need to adjust the scales to fit the distribution of the exposure variable for the histogram. Unlike the Y1 scale, this one usually does not need to change. To keep the histogram and RCS curves apart, the Y2 scale is deliberately larger than what the height of bars requires.
 10.	Median: The 2 lines marked by ‘Median’ are optional and may be dropped to keep the graph less cluttered. It adds the median of the exposure and helps to understand the distribution relative to the estimated curve. The calculated median is for the population defined by the indicator in the if-clause, without excluding any outliers. If you keep it, adjust the height to match the scale of the outcome variable and the Y axis (change 11 to a value that suits your graph). <br>
-<br>
+<div>
 
 **RCS Linear Regression_multiple** - 
 Testing non-linearity in associations between multiple continuous exposures and multiple continuous outcome variables in linear regression models 
@@ -54,7 +54,7 @@ The ‘if clause’ must be defined even if none is necessary. In that case, you
 If you aim to use standard knot positions (3, 4, and 5 default knots), you don’t need to change anything. If you want to explore alternative knots (modified), they should be produced in a separate sheet (by adding _m to the sheet name). If all results are needed in a single sheet (e.g., to compare AICs), you can merge the two sheets by manually adding the products of the alternative knots to the Excel sheet for default knots (in the S1 cell if there are three exposure variables).  
 Finally, modify the last line before “----->Run” (putexcle command) by defining the Excel file name and sheet. Don’t forget that this must be identical in the three blocks.  
 The “----->Run” line is a flag indicating that there is usually no need to change code from that point onwards. You should run all the code from “----->Defining” to “/*END*/” for each block (it will not work correctly if you run the section after “----->Run” separately).  
-The working directory path refers to a folder containing ‘codes’ and ‘outputs’ folders. The outputs folder may include a ‘graphs’ folder. <br>
+The working directory path refers to a folder containing ‘codes’ and ‘outputs’ folders. The outputs folder may include a ‘graphs’ folder. <br><br>
 Errors
 1.	Can happen when saving outputs takes longer than the cycle time. You can save your output on a local drive (not synchronised by OneDrive, etc.), disconnect your computer from the internet, or increase the sleep command.
 2.	Convergence issue: You need to explore the problem manually. Usually, you need to amend the multivariable model, such as using a simpler one.
