@@ -81,7 +81,7 @@ twoway  ///
 	lcolor(gs12) ytitle("Proportion of Population (%)", ///
 	axis(2)) ylabel(0(5)40, axis(2) angle(horiz) format(%2.0fc))) 				//Y2 scale//
 di ""	////
-	_newline "`expolbl' —— `outlbl' "      			///
+	_newline "`expolbl' —— `outlbl' "      				///
 	_newline " Knots position:        	 " "`knotn'"  	///
 	_newline " Reference value: 		" " Percentile " `ref_ptile' " (" `ref' ")" ///
 	_newline " P for overall association: 	" `poa'   	///
