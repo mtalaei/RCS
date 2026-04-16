@@ -56,5 +56,5 @@ Finally, modify the last line before “----->Run” (putexcle command) by defin
 The “----->Run” line is a flag indicating that there is usually no need to change code from that point onwards. You should run all the code from “----->Defining” to “/*END*/” for each block (it will not work correctly if you run the section after “----->Run” separately).  
 The working directory path refers to a folder containing ‘codes’ and ‘outputs’ folders. The outputs folder may include a ‘graphs’ folder. <br>
 *Errors* 
-Can happen when saving outputs takes longer than the cycle time. You can save your output on a local drive (not synchronised by OneDrive, etc.), disconnect your computer from the internet, or increase the sleep command.
-Convergence issue: You need to explore the problem manually. Usually, you need to amend the multivariable model, such as using a simpler one.
+1. Can happen when saving outputs takes longer than the cycle time. You can save your output on a local drive (not synchronised by OneDrive, etc.), disconnect your computer from the internet, or increase the sleep command.
+2. Convergence issue: You need to explore the problem manually. Usually, you need to amend the multivariable model, such as using a simpler one.
