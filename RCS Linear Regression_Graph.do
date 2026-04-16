@@ -24,7 +24,6 @@ global model_CS "$model_5"				//Final model//
 
 *----->Defining
 replace "EE"=round("EE",0.001)			//Refining exposure: EE//
-recast float "EE", force
 global expo "EE"						//Exposure: EE//
 local expolbl: variable label "EE"		//Label of exposure: EE//
 local ref_ptile "15"					//Reference level in %ile//
