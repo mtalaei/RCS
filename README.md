@@ -18,7 +18,7 @@ After defining the adjustment model, the following items need to be defined: Exp
      (4): 5 35 65 95<br>
      (5): 5 27.5 50 72.5 95<br>
 6. The “----->Run” line is a flag indicating that there is usually no need to change code from that point onwards.
-
+**
 
 **RCS Graph Linear Regression** -
 RCS Graph Linear Regression – To draw an RCS curve association between a continuous exposure and a continuous outcome in a linear regression model.
@@ -35,7 +35,7 @@ The number of knots and their positions (in percentiles) are flexibly defined at
 8.	The lines marked by ‘Y1 scale’ and ‘X scale’ are where you need to adjust the scales to fit the range of exposure and outcome variables for the RCS curve.
 9.	The lines marked by ‘Y2 scale’ and ‘X scale’ are where you need to adjust the scales to fit the distribution of the exposure variable for the histogram. Unlike the Y1 scale, this one usually does not need to change. To keep the histogram and RCS curves apart, the Y2 scale is deliberately larger than what the height of bars requires.
 10.	Median: The 2 lines marked by ‘Median’ are optional and may be dropped to keep the graph less cluttered. It adds the median of the exposure and helps to understand the distribution relative to the estimated curve. The calculated median is for the population defined by the indicator in the if-clause, without excluding any outliers. If you keep it, adjust the height to match the scale of the outcome variable and the Y axis (change 11 to a value that suits your graph).
-
+**
 
 **RCS Linear Regression_multiple** - 
 Testing non-linearity in associations between multiple continuous exposures and multiple continuous outcome variables in linear regression models 
