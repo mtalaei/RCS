@@ -34,7 +34,6 @@ global out "OO"							//Outcome: OO//
 local outlbl: variable label "OO"		//Label of outcome//
 global iff "indicatorXXX==1"			//if clause//
 *----->Run
-*To make splines accprding to the knots
 _pctile ${expo} if $iff, p(`knots') 
 quietly forv i=1/`nk' {
 	local knot`i' : display %6.3g r(r`i')
@@ -50,26 +49,21 @@ local nkm1 = `nk' - 1
 quietly forv i=2/`nkm1' {
 	local splist `splist' ${expo}_spl`i'
 }
-testparm `splist' 				/*Test for nonlinearity*/
+testparm `splist' 				
 local pnl=round(r(p), 0.001) 
-*To determin the actual exposure value closest to the percentile used as reference
 _pctile ${expo}, p(`ref_ptile')
 local p_temp = r(r1)
 gen diff=abs(${expo}-`p_temp')
 gsort diff
 local ref = ${expo}[_n==1]
-*Differences in predicted responses after RCS
 levelsof ${expo}
 xbrcspline ${expo}_spl, values(`r(levels)') ref(`ref') matknots(knots) gen(con hr lb ub)
-*To drop extremes (0.5%) 
 _pctile ${expo}, p(1 99)				//To drop extremes//
 return list
 local cut_lo = r(r1)
 local cut_hi = r(r2)
-*To get median 
 sum ${expo} if $iff, d
 local med=r(p50)
-*To draw the graph
 twoway  ///
 || (line lb ub hr con if inrange(con,`cut_lo',`cut_hi'), ///
 	lp(- - l) lc(cranberry*0.6 cranberry*0.6 maroon) yaxis(1)), ///
