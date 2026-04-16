@@ -47,7 +47,7 @@ Only suitable when there is no evidence of a non-linear association (item 3).
 2)	AIC for the model  
 To compare model fit with different numbers of knots (3, 4, and 5 knots). The model with the lowest AIC value has the best fit and should be used. 
 3)	P for a non-linear association  
-It is the ultimate product of these codes, in which the evidence of a non-linear association is explored. <br>
+It is the ultimate product of these codes, in which the evidence of a non-linear association is explored. <br><br>
 The output Excel file is organised with exposure variables in columns and outcome variables in rows, in three blocks (column sets) corresponding to the three items explained above, all in a single sheet. For example, it currently has three hypothetical exposure variables (E1-E3) and 5 hypothetical outcome variables (O1-O5); therefore, the three blocks explained above will each have three columns, separated by an empty column. 
 The section above titled “----->Run” needs to be adjusted to your needs. These changes should be identical across the three code blocks, except for the column letters for exposures. It means that the ‘if clauses’, exposure and outcome variable lists, etc., must be the same, but columns corresponding to exposures need to move forward (B C D, H I J, and N O P for three exposure variables).  
 The ‘if clause’ must be defined even if none is necessary. In that case, you can use a covariate without missing as an indicator [e.g. !missing(age)].  
@@ -55,6 +55,6 @@ If you aim to use standard knot positions (3, 4, and 5 default knots), you don�
 Finally, modify the last line before “----->Run” (putexcle command) by defining the Excel file name and sheet. Don’t forget that this must be identical in the three blocks.  
 The “----->Run” line is a flag indicating that there is usually no need to change code from that point onwards. You should run all the code from “----->Defining” to “/*END*/” for each block (it will not work correctly if you run the section after “----->Run” separately).  
 The working directory path refers to a folder containing ‘codes’ and ‘outputs’ folders. The outputs folder may include a ‘graphs’ folder. <br>
-Errors  
+*Errors* 
 Can happen when saving outputs takes longer than the cycle time. You can save your output on a local drive (not synchronised by OneDrive, etc.), disconnect your computer from the internet, or increase the sleep command.
 Convergence issue: You need to explore the problem manually. Usually, you need to amend the multivariable model, such as using a simpler one.
