@@ -20,7 +20,7 @@ After defining the adjustment model, the following items need to be defined: Exp
 6. The “----->Run” line is a flag indicating that there is usually no need to change code from that point onwards. <br>
 <br><br>
 
-**RCS Graph Linear Regression** -
+**RCS Linear Regression_Graph** -
 To draw an RCS curve for an association between a continuous exposure and a continuous outcome in a linear regression model.
 
 *Explanations:* 
