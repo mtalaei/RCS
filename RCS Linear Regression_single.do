@@ -4,7 +4,6 @@
 *Notes:
 *	Linear regression with a flexible number and positions of knots for a single association
 *	Standard positions of knots: 3K-> 10 50 90, 4K-> 5 35 65 95, 5K-> 5 27.5 50 72.5 95
-*	If clause should not be empty, if nothing: !missing(`oo')
 
 *========Working directory.
 /*Work*/ 	cd "C:\Users\"
@@ -13,27 +12,27 @@
 use "data\XXX.dta", clear
 
 *========Model
-do codes\Models_XXX.do				//Adjustment models//
-global model_CS "$model_3"			//Final model//
+macro drop _all
+do codes\Models_XXX.do						//Adjustment models//
+global model_CS "$model_3"					//Final model//
 
 **#===EE-OO association
-global model_CS "$model_3"
 *----->Defining
-gen EEm = round(EE, 0.01)			//Exposure: EE//
-local oo "OO"						//Outcome: OO//
-global iff "indicatorXXX==1"		//if clause//
-local nk "4"						//Number of Knots//
-local knots="5 35 65 95"			//Positions of Knots//
+gen /*EEm*/ = round(/*EE*/, 0.01)			//Exposure: EE//
+local oo //OO								//Outcome: OO//
+global iff //if indicatorXXX==1				//if clause//
+local nk //4								//Number of Knots//
+local knots 5 35 65 95						//Positions of Knots//
 *----->Run
 local outlbl: variable label `oo'
-_pctile EEm if $iff, p(`knots') 
+_pctile EEm $iff, p(`knots') 
 quietly forv i=1/`nk' {
 	local knot`i' : display %9.3g r(r`i')
 	local knotn `knotn' `knot`i''
 }
-mkspline EEm_spl=EEm if $iff, knots(`knotn') cubic displayknots
+mkspline EEm_spl=EEm $iff, knots(`knotn') cubic displayknots
 mat knots = r(knots)
-regress `oo' EEm_spl* $model_CS if $iff, cformat(%9.2f) 
+regress `oo' EEm_spl* $model_CS $iff, cformat(%9.2f) 
 local nn=e(N)
 estat ic
 matrix mtx= r(S)
