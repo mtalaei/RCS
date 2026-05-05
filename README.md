@@ -11,7 +11,7 @@ After defining the adjustment model, the following items need to be defined: Exp
 1. The working directory path refers to a folder containing ‘codes’ and ‘outputs’ folders. The outputs folder may include a ‘graphs’ folder.
 2. Model: The adjustment models may be organised in another do file in an accumulative, stepwise manner (e.g., from model 1 to model 5). It calls all models first, then you choose the model of your choice, which is labelled here as the final model (the main adjusting model). Instead, you can define your model by replacing ‘$model_5’ with a covariate list.
 3. Most changes are needed from ‘----->Defining’ to the ‘----->Run’, where the following items need to be defined: Exposure variable (EE), outcome variable (OO), if-clause, number of Knots (usually 3, 4, or 5) and their position in percentiles (standard positions are provided within the do file).
-4. If there is no indicator to be used as an if clause, it should be !missing(`oo')
+4. If-clause: 'if' must be included in the 'if clause', otherwise you get an error. The command line should be like: global iff if indicator==1. However, it can be left empty if there is no need, like: global iff. The best practice is to define an indicator variable that reflects the inclusion and exclusion criteria. 
 5. The number of Knots and positions should be consistent; if 4 knots are defined, there should be four positions defined in the line below.
    standard knot positions:<br>
      (3): 10 50 90<br>
