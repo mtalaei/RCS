@@ -59,3 +59,26 @@ The working directory path refers to a folder containing ‘codes’ and ‘outp
 *Errors*:
 - Can happen when saving outputs takes longer than the cycle time. You can save your output on a local drive (not synchronised by OneDrive, etc.), disconnect your computer from the internet, or increase the sleep command.
 - Convergence issue: You need to explore the problem manually. Usually, you need to amend the multivariable model, such as using a simpler one.
+<br><br>
+
+**RCS Linear Regression_Estimation** -
+To translate the estimated curve into a set of values corresponding to either two specific values of exposure (Value of interest vs a reference) or a change in exposure vs a percentile value as a reference. 
+
+*Explanations*:
+It is totally flexible in the number of knots and their positions (in percentile terms). The optimal parameters of the RCS model should have been explored before getting to this stage; however, the standard values can be used tentatively. 
+There are three sections: 
+  - Specific values: To calculate the marginal effect corresponding to 5.78 mg compared to 10.75 mg. 
+  - Percentiles: To calculate the marginal effect corresponding to a 5 mg increase from 20 percentile.
+  - Percentiles-Excel: To calculate the marginal effect corresponding to a 5 mg increase from 20 percentile and export the output to an Excel file. 
+1. The working directory path refers to a folder containing ‘codes’ and ‘outputs’ folders. The outputs folder may include a ‘graphs’ folder.
+2. Model: The adjustment models may be organised in another do file in an accumulative, stepwise manner (e.g., from model 1 to model 5). It calls all models first, then you choose the model of your choice, which is labelled here as the final model (the main adjusting model). Instead, you can define your model by replacing ‘$model_5’ with a covariate list.
+3. After defining the adjustment model, all changes are needed from ‘----->Defining’ to the ‘----->Run’, where the following items need to be defined: Exposure (EE), Outcome (OO), if clause, number of Knots (usually 3, 4, or 5) and their position in percentiles (standard positions are provided within the do file), reference level (exact value or percentile), and value of interest (exact value or difference of interest).
+4. If exact values are used, the user needs to find the value closest to the intended value that exists in the dataset (for both reference and value of interest). This process is done automatically when the percentile is used in the second or third sections. At the beginning of the first section, the code titled "Finding the actual values" helps explore the dataset's values. At the beginning of the second section, the code titled "Check percentile of a value" finds the corresponding percentile of an actual exposure value. 
+5. If-clause: 'if' must be included in the 'if clause', otherwise you get an error. The command line should be like: global iff if indicator==1. However, it can be left empty if there is no need, like: global iff. The best practice is to define an indicator variable that reflects the inclusion and exclusion criteria. 
+6. The number of Knots and positions should be consistent; if 4 knots are defined, there should be four positions defined in the line below.
+   standard knot positions:<br>
+     (3): 10 50 90<br>
+     (4): 5 35 65 95<br>
+     (5): 5 27.5 50 72.5 95<br>
+7. The “----->Run” line is a flag indicating that there is usually no need to change code from that point onwards. <br>
+<br><br>
